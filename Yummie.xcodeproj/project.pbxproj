@@ -15,6 +15,7 @@
 		102907E62C311A5B001B1BBC /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102907E52C311A5B001B1BBC /* OnboardingViewController.swift */; };
 		102907E92C3120C5001B1BBC /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102907E82C3120C5001B1BBC /* UIView+Extension.swift */; };
 		102907EB2C312229001B1BBC /* OnboardingSlide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102907EA2C312229001B1BBC /* OnboardingSlide.swift */; };
+		107B69132C32601B00CC7590 /* OnboardingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107B69122C32601B00CC7590 /* OnboardingCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		102907E52C311A5B001B1BBC /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		102907E82C3120C5001B1BBC /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		102907EA2C312229001B1BBC /* OnboardingSlide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSlide.swift; sourceTree = "<group>"; };
+		107B69122C32601B00CC7590 /* OnboardingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 			isa = PBXGroup;
 			children = (
 				102907E52C311A5B001B1BBC /* OnboardingViewController.swift */,
+				107B69122C32601B00CC7590 /* OnboardingCollectionViewCell.swift */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -189,6 +192,7 @@
 				1022FED22C2D1BCC00B37D0D /* SceneDelegate.swift in Sources */,
 				102907E92C3120C5001B1BBC /* UIView+Extension.swift in Sources */,
 				102907E62C311A5B001B1BBC /* OnboardingViewController.swift in Sources */,
+				107B69132C32601B00CC7590 /* OnboardingCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

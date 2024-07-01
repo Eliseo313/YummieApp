@@ -11,9 +11,10 @@ class OnboardingViewController: UIViewController {
 
     
     @IBOutlet weak var collectionView: UICollectionView!
-    
     @IBOutlet weak var pageControl: UIPageControl!
+    @IBOutlet weak var netxBtn: UIButton!
     
+    var slides : [OnboardingSlide] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
