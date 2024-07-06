@@ -10,7 +10,7 @@ import UIKit
 class OnboardingCollectionViewCell: UICollectionViewCell {
     
     static let identifier = String(describing: OnboardingCollectionViewCell.self
-    );
+    )
     
     @IBOutlet weak var slideTittleLbl: UILabel!
     @IBOutlet weak var slideImageView: UIImageView! 
@@ -24,17 +24,4 @@ class OnboardingCollectionViewCell: UICollectionViewCell {
     }
 }
 
-extension OnboardingViewController: UICollectionViewDelegate, UICollectionViewDataSource{
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return slides.count
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: OnboardingCollectionViewCell.identifier , for: <#T##IndexPath#>) as!OnboardingCollectionViewCell
-        cell.setup(slides[indexPath.row])
-        return cell
-    }
-    
-}
+
