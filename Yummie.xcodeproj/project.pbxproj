@@ -16,6 +16,7 @@
 		102907E92C3120C5001B1BBC /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102907E82C3120C5001B1BBC /* UIView+Extension.swift */; };
 		102907EB2C312229001B1BBC /* OnboardingSlide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102907EA2C312229001B1BBC /* OnboardingSlide.swift */; };
 		107B69132C32601B00CC7590 /* OnboardingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107B69122C32601B00CC7590 /* OnboardingCollectionViewCell.swift */; };
+		10A8B78A2C38FFC0004DEE84 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A8B7892C38FFC0004DEE84 /* HomeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		102907E82C3120C5001B1BBC /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		102907EA2C312229001B1BBC /* OnboardingSlide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSlide.swift; sourceTree = "<group>"; };
 		107B69122C32601B00CC7590 /* OnboardingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCollectionViewCell.swift; sourceTree = "<group>"; };
+		10A8B7892C38FFC0004DEE84 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +89,7 @@
 		102907E22C3119A6001B1BBC /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				10A8B7882C38FF9C004DEE84 /* Home */,
 				102907E42C311A17001B1BBC /* Onboarding */,
 			);
 			path = Views;
@@ -114,6 +117,14 @@
 				102907E82C3120C5001B1BBC /* UIView+Extension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		10A8B7882C38FF9C004DEE84 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				10A8B7892C38FFC0004DEE84 /* HomeViewController.swift */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -192,6 +203,7 @@
 				1022FED22C2D1BCC00B37D0D /* SceneDelegate.swift in Sources */,
 				102907E92C3120C5001B1BBC /* UIView+Extension.swift in Sources */,
 				102907E62C311A5B001B1BBC /* OnboardingViewController.swift in Sources */,
+				10A8B78A2C38FFC0004DEE84 /* HomeViewController.swift in Sources */,
 				107B69132C32601B00CC7590 /* OnboardingCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
