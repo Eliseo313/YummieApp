@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1002DA852C44BB930075AC5C /* DishDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1002DA842C44BB930075AC5C /* DishDetailViewController.swift */; };
+		1002DA872C44C6990075AC5C /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1002DA862C44C6990075AC5C /* UIViewController+Extension.swift */; };
 		1022FED02C2D1BCC00B37D0D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1022FECF2C2D1BCC00B37D0D /* AppDelegate.swift */; };
 		1022FED22C2D1BCC00B37D0D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1022FED12C2D1BCC00B37D0D /* SceneDelegate.swift */; };
 		1022FED72C2D1BCC00B37D0D /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 1022FED62C2D1BCC00B37D0D /* Base */; };
@@ -33,6 +34,7 @@
 
 /* Begin PBXFileReference section */
 		1002DA842C44BB930075AC5C /* DishDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishDetailViewController.swift; sourceTree = "<group>"; };
+		1002DA862C44C6990075AC5C /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		1022FECC2C2D1BCC00B37D0D /* Yummie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Yummie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1022FECF2C2D1BCC00B37D0D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1022FED12C2D1BCC00B37D0D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -153,6 +155,7 @@
 			children = (
 				102907E82C3120C5001B1BBC /* UIView+Extension.swift */,
 				10B3EA382C3B6C5500A10438 /* String+Extension.swift */,
+				1002DA862C44C6990075AC5C /* UIViewController+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -290,6 +293,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1002DA872C44C6990075AC5C /* UIViewController+Extension.swift in Sources */,
 				10B3EA312C3B5ED800A10438 /* CategoryCollectionViewCell.swift in Sources */,
 				102907EB2C312229001B1BBC /* OnboardingSlide.swift in Sources */,
 				1022FED02C2D1BCC00B37D0D /* AppDelegate.swift in Sources */,
