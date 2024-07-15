@@ -31,7 +31,9 @@ class HomeViewController: UIViewController {
     var specials : [Dish] = [
         .init(id: "id1", name: "Morisqueta", description: "Mi platillo favorito", image: "https://picsum.photos/100/200", calories: 700),
         .init(id: "id2", name: "Enchiladas", description: "Al estilo Michoacán",
-              image: "https://picsum.photos/100/200", calories: 1000)
+              image: "https://picsum.photos/100/200", calories: 1000),
+        .init(id: "id2", name: "Pozole Rojo", description: "El platillo tipico que necesitas",
+              image: "https://picsum.photos/100/200", calories: 8000)
     ]
     
     override func viewDidLoad() {
