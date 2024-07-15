@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1002DA852C44BB930075AC5C /* DishDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1002DA842C44BB930075AC5C /* DishDetailViewController.swift */; };
 		1022FED02C2D1BCC00B37D0D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1022FECF2C2D1BCC00B37D0D /* AppDelegate.swift */; };
 		1022FED22C2D1BCC00B37D0D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1022FED12C2D1BCC00B37D0D /* SceneDelegate.swift */; };
 		1022FED72C2D1BCC00B37D0D /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 1022FED62C2D1BCC00B37D0D /* Base */; };
@@ -31,6 +32,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1002DA842C44BB930075AC5C /* DishDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishDetailViewController.swift; sourceTree = "<group>"; };
 		1022FECC2C2D1BCC00B37D0D /* Yummie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Yummie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1022FECF2C2D1BCC00B37D0D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1022FED12C2D1BCC00B37D0D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -67,6 +69,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1002DA832C44BB710075AC5C /* DishDetail */ = {
+			isa = PBXGroup;
+			children = (
+				1002DA842C44BB930075AC5C /* DishDetailViewController.swift */,
+			);
+			path = DishDetail;
+			sourceTree = "<group>";
+		};
 		1022FEC32C2D1BCC00B37D0D = {
 			isa = PBXGroup;
 			children = (
@@ -113,6 +123,7 @@
 		102907E22C3119A6001B1BBC /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				1002DA832C44BB710075AC5C /* DishDetail */,
 				10A8B7882C38FF9C004DEE84 /* Home */,
 				102907E42C311A17001B1BBC /* Onboarding */,
 			);
@@ -285,6 +296,7 @@
 				1022FED22C2D1BCC00B37D0D /* SceneDelegate.swift in Sources */,
 				102907E92C3120C5001B1BBC /* UIView+Extension.swift in Sources */,
 				102907E62C311A5B001B1BBC /* OnboardingViewController.swift in Sources */,
+				1002DA852C44BB930075AC5C /* DishDetailViewController.swift in Sources */,
 				10A8B78A2C38FFC0004DEE84 /* HomeViewController.swift in Sources */,
 				10B3EA342C3B614000A10438 /* DishCategory.swift in Sources */,
 				10FA58F82C4025610057DF0E /* DishLandscapeCollectionViewCell.swift in Sources */,

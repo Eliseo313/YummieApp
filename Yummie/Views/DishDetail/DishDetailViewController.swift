@@ -2,28 +2,27 @@
 //  DishDetailViewController.swift
 //  Yummie
 //
-//  Created by Eliseo Adrian Cardenas Ortiz on 12/07/24.
+//  Created by Eliseo Adrian Cardenas Ortiz on 14/07/24.
 //
 
 import UIKit
 
 class DishDetailViewController: UIViewController {
 
+    @IBOutlet weak var dishImageView: UIImageView!
+    @IBOutlet weak var titleLbl: UILabel!
+    @IBOutlet weak var caloriesLbl: UILabel!
+    @IBOutlet weak var nameField: UITextField!
+    @IBOutlet weak var descriptionLbl: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+ 
+    }
 
-        // Do any additional setup after loading the view.
+    @IBAction func ordenarBtnClicked(_ sender: UIButton) {
+        
+        
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
