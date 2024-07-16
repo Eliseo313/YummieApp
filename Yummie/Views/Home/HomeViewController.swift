@@ -42,7 +42,7 @@ class HomeViewController: UIViewController {
         specialsCollectionView.dataSource = self
         
         registerCells()
-        title = "Delicioso"
+        title = "Yummie"
      }
     
     private func registerCells(){

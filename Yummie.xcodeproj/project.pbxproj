@@ -28,6 +28,8 @@
 		10B3EA342C3B614000A10438 /* DishCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B3EA332C3B614000A10438 /* DishCategory.swift */; };
 		10B3EA372C3B6B9F00A10438 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 10B3EA362C3B6B9F00A10438 /* Kingfisher */; };
 		10B3EA392C3B6C5500A10438 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B3EA382C3B6C5500A10438 /* String+Extension.swift */; };
+		10BAED342C462826007503C6 /* ListOrdersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10BAED332C462826007503C6 /* ListOrdersViewController.swift */; };
+		10BAED362C462A09007503C6 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10BAED352C462A09007503C6 /* Order.swift */; };
 		10EAF5D62C45642C002722CC /* DishListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10EAF5D42C45642C002722CC /* DishListTableViewCell.swift */; };
 		10EAF5D72C45642C002722CC /* DishListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10EAF5D52C45642C002722CC /* DishListTableViewCell.xib */; };
 		10EAF5DA2C4568C7002722CC /* ListDishesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10EAF5D92C4568C7002722CC /* ListDishesViewController.swift */; };
@@ -58,6 +60,8 @@
 		10B3EA302C3B5ED800A10438 /* CategoryCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryCollectionViewCell.xib; sourceTree = "<group>"; };
 		10B3EA332C3B614000A10438 /* DishCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishCategory.swift; sourceTree = "<group>"; };
 		10B3EA382C3B6C5500A10438 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		10BAED332C462826007503C6 /* ListOrdersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListOrdersViewController.swift; sourceTree = "<group>"; };
+		10BAED352C462A09007503C6 /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 		10EAF5D42C45642C002722CC /* DishListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishListTableViewCell.swift; sourceTree = "<group>"; };
 		10EAF5D52C45642C002722CC /* DishListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DishListTableViewCell.xib; sourceTree = "<group>"; };
 		10EAF5D92C4568C7002722CC /* ListDishesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListDishesViewController.swift; sourceTree = "<group>"; };
@@ -124,6 +128,7 @@
 				102907EA2C312229001B1BBC /* OnboardingSlide.swift */,
 				10B3EA332C3B614000A10438 /* DishCategory.swift */,
 				109EAE1B2C3ED2AE00D9838C /* Dish.swift */,
+				10BAED352C462A09007503C6 /* Order.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -131,6 +136,7 @@
 		102907E22C3119A6001B1BBC /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				10BAED322C46279A007503C6 /* ListOrders */,
 				10EAF5D82C45687E002722CC /* ListDishes */,
 				1002DA832C44BB710075AC5C /* DishDetail */,
 				10A8B7882C38FF9C004DEE84 /* Home */,
@@ -210,6 +216,14 @@
 				10B3EA302C3B5ED800A10438 /* CategoryCollectionViewCell.xib */,
 			);
 			path = CategoryCollectionViewCell;
+			sourceTree = "<group>";
+		};
+		10BAED322C46279A007503C6 /* ListOrders */ = {
+			isa = PBXGroup;
+			children = (
+				10BAED332C462826007503C6 /* ListOrdersViewController.swift */,
+			);
+			path = ListOrders;
 			sourceTree = "<group>";
 		};
 		10EAF5D22C4563DB002722CC /* TableViewCells */ = {
@@ -328,6 +342,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				10EAF5D62C45642C002722CC /* DishListTableViewCell.swift in Sources */,
+				10BAED342C462826007503C6 /* ListOrdersViewController.swift in Sources */,
+				10BAED362C462A09007503C6 /* Order.swift in Sources */,
 				1002DA872C44C6990075AC5C /* UIViewController+Extension.swift in Sources */,
 				10B3EA312C3B5ED800A10438 /* CategoryCollectionViewCell.swift in Sources */,
 				102907EB2C312229001B1BBC /* OnboardingSlide.swift in Sources */,
