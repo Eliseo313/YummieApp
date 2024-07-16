@@ -32,7 +32,7 @@ class HomeViewController: UIViewController {
         .init(id: "id1", name: "Morisqueta", description: "Mi platillo favorito", image: "https://picsum.photos/100/200", calories: 700),
         .init(id: "id2", name: "Enchiladas", description: "Al estilo Michoacán",
               image: "https://picsum.photos/100/200", calories: 1000),
-        .init(id: "id2", name: "Pozole Rojo", description: "El platillo tipico que necesitas",
+        .init(id: "id2", name: "Pozole Rojo", description: "El platillo tipico que necesitas El platillo tipico que necesitas El platillo tipico que necesitas El platillo tipico que necesitas El platillo tipico que necesitas",
               image: "https://picsum.photos/100/200", calories: 8000)
     ]
     
@@ -42,6 +42,7 @@ class HomeViewController: UIViewController {
         specialsCollectionView.dataSource = self
         
         registerCells()
+        title = "Yummie"
      }
     
     private func registerCells(){
@@ -94,7 +95,19 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
             
         default: return UICollectionViewCell()
         }
-        
-        
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if collectionView == categoryCollectionView {
+            let controller = ListDishesViewController.instantiate()
+            controller.category = categories[indexPath.row]
+            navigationController?.pushViewController(controller, animated: true)
+        }else{
+            let controller = DishDetailViewController.instantiate()
+            
+            controller.dish = collectionView == popularCollectionView ? populars[indexPath.row] : specials[indexPath.row]
+            
+            navigationController?.pushViewController(controller, animated: true)
+        }
     }
 }
