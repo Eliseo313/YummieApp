@@ -17,6 +17,10 @@
 		102907E62C311A5B001B1BBC /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102907E52C311A5B001B1BBC /* OnboardingViewController.swift */; };
 		102907E92C3120C5001B1BBC /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102907E82C3120C5001B1BBC /* UIView+Extension.swift */; };
 		102907EB2C312229001B1BBC /* OnboardingSlide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102907EA2C312229001B1BBC /* OnboardingSlide.swift */; };
+		104C25A42C46BEBA007EBF15 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104C25A32C46BEBA007EBF15 /* NetworkService.swift */; };
+		104C25A62C46BF91007EBF15 /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104C25A52C46BF91007EBF15 /* Route.swift */; };
+		104C25A82C46C024007EBF15 /* Method.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104C25A72C46C024007EBF15 /* Method.swift */; };
+		106F710F2C4A25E000CA256C /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106F710E2C4A25E000CA256C /* AppError.swift */; };
 		107B69132C32601B00CC7590 /* OnboardingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107B69122C32601B00CC7590 /* OnboardingCollectionViewCell.swift */; };
 		109EAE1C2C3ED2AE00D9838C /* Dish.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109EAE1B2C3ED2AE00D9838C /* Dish.swift */; };
 		10A8B78A2C38FFC0004DEE84 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A8B7892C38FFC0004DEE84 /* HomeViewController.swift */; };
@@ -50,6 +54,10 @@
 		102907E52C311A5B001B1BBC /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		102907E82C3120C5001B1BBC /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		102907EA2C312229001B1BBC /* OnboardingSlide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSlide.swift; sourceTree = "<group>"; };
+		104C25A32C46BEBA007EBF15 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		104C25A52C46BF91007EBF15 /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
+		104C25A72C46C024007EBF15 /* Method.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Method.swift; sourceTree = "<group>"; };
+		106F710E2C4A25E000CA256C /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
 		107B69122C32601B00CC7590 /* OnboardingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCollectionViewCell.swift; sourceTree = "<group>"; };
 		109EAE1B2C3ED2AE00D9838C /* Dish.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dish.swift; sourceTree = "<group>"; };
 		10A8B7892C38FFC0004DEE84 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -108,6 +116,7 @@
 		1022FECE2C2D1BCC00B37D0D /* Yummie */ = {
 			isa = PBXGroup;
 			children = (
+				104C25A22C46BE9E007EBF15 /* Networking */,
 				102907E72C312093001B1BBC /* Extensions */,
 				102907E32C3119BA001B1BBC /* CustomViews */,
 				102907E22C3119A6001B1BBC /* Views */,
@@ -172,6 +181,17 @@
 				1002DA862C44C6990075AC5C /* UIViewController+Extension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		104C25A22C46BE9E007EBF15 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				104C25A32C46BEBA007EBF15 /* NetworkService.swift */,
+				104C25A52C46BF91007EBF15 /* Route.swift */,
+				104C25A72C46C024007EBF15 /* Method.swift */,
+				106F710E2C4A25E000CA256C /* AppError.swift */,
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 		10A8B7882C38FF9C004DEE84 /* Home */ = {
@@ -349,15 +369,19 @@
 				102907EB2C312229001B1BBC /* OnboardingSlide.swift in Sources */,
 				1022FED02C2D1BCC00B37D0D /* AppDelegate.swift in Sources */,
 				1022FED22C2D1BCC00B37D0D /* SceneDelegate.swift in Sources */,
+				104C25A82C46C024007EBF15 /* Method.swift in Sources */,
 				102907E92C3120C5001B1BBC /* UIView+Extension.swift in Sources */,
 				102907E62C311A5B001B1BBC /* OnboardingViewController.swift in Sources */,
 				1002DA852C44BB930075AC5C /* DishDetailViewController.swift in Sources */,
 				10A8B78A2C38FFC0004DEE84 /* HomeViewController.swift in Sources */,
 				10B3EA342C3B614000A10438 /* DishCategory.swift in Sources */,
+				104C25A62C46BF91007EBF15 /* Route.swift in Sources */,
+				104C25A42C46BEBA007EBF15 /* NetworkService.swift in Sources */,
 				10FA58F82C4025610057DF0E /* DishLandscapeCollectionViewCell.swift in Sources */,
 				10B3EA392C3B6C5500A10438 /* String+Extension.swift in Sources */,
 				10AD74362C3D80830051047D /* CardView.swift in Sources */,
 				10EAF5DA2C4568C7002722CC /* ListDishesViewController.swift in Sources */,
+				106F710F2C4A25E000CA256C /* AppError.swift in Sources */,
 				107B69132C32601B00CC7590 /* OnboardingCollectionViewCell.swift in Sources */,
 				109EAE1C2C3ED2AE00D9838C /* Dish.swift in Sources */,
 				10AD743B2C3D85460051047D /* DishPortraitCollectionViewCell.swift in Sources */,

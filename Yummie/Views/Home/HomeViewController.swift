@@ -39,6 +39,13 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        /*let service = NetworkService()
+        let request = service.createRequest(route: .temp, method: .post, parameters: ["name":"Eliseo", "apellido":"Cardenas"])
+        print("la Url es: \(String(describing: request?.url))")
+        print("Body: \(String(describing: request?.httpBody))")*/
+        NetworkService.shared.myFirstRequest()
+        
+        
         specialsCollectionView.dataSource = self
         
         registerCells()
