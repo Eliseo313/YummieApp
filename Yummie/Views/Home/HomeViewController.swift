@@ -43,7 +43,16 @@ class HomeViewController: UIViewController {
         let request = service.createRequest(route: .temp, method: .post, parameters: ["name":"Eliseo", "apellido":"Cardenas"])
         print("la Url es: \(String(describing: request?.url))")
         print("Body: \(String(describing: request?.httpBody))")*/
-        NetworkService.shared.myFirstRequest()
+        NetworkService.shared.myFirstRequest { (result) in
+            switch result{
+            case .success(let data):
+                for dish in data {
+                    print(dish.name ?? "")
+                }
+            case .failure(let error):
+                print("El error es: \(error.localizedDescription)")
+            }
+        }
         
         
         specialsCollectionView.dataSource = self
