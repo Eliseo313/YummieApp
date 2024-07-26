@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import JGProgressHUD
+
 
 class HomeViewController: UIViewController {
 
@@ -15,50 +17,48 @@ class HomeViewController: UIViewController {
     
     @IBOutlet weak var specialsCollectionView: UICollectionView!
     
-    var categories: [DishCategory] = [
-        .init(id: "id1", name: "Comida Mexicana", image: "https://picsum.photos/100/200"),
-        .init(id: "id2", name: "Comida Italiana", image: "https://picsum.photos/100/200"),
-        .init(id: "id3", name: "Comida China", image: "https://picsum.photos/100/200"),
-        .init(id: "id4", name: "Comida Tailandesa", image: "https://picsum.photos/100/200"),
-        .init(id: "id5", name: "Comida Japonesa", image: "https://picsum.photos/100/200")
-    ]
-    var populars : [Dish] = [
-        .init(id: "id1", name: "Morisqueta", description: "La más pedida!", image: "https://picsum.photos/100/200", calories: 700),
-        .init(id: "id2", name: "Pechuga asada", description: "Delicioso!", image: "https://picsum.photos/100/200", calories: 300),
-        .init(id: "id3", name: "Mole", description: "Especialidad de la casa", image: "https://picsum.photos/100/200", calories: 500)
-    ]
-    
-    var specials : [Dish] = [
-        .init(id: "id1", name: "Morisqueta", description: "Mi platillo favorito", image: "https://picsum.photos/100/200", calories: 700),
-        .init(id: "id2", name: "Enchiladas", description: "Al estilo Michoacán",
-              image: "https://picsum.photos/100/200", calories: 1000),
-        .init(id: "id2", name: "Pozole Rojo", description: "El platillo tipico que necesitas El platillo tipico que necesitas El platillo tipico que necesitas El platillo tipico que necesitas El platillo tipico que necesitas",
-              image: "https://picsum.photos/100/200", calories: 8000)
-    ]
+    var categories: [DishCategory] = []
+    var populars : [Dish] = []
+    var specials : [Dish] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        /*let service = NetworkService()
-        let request = service.createRequest(route: .temp, method: .post, parameters: ["name":"Eliseo", "apellido":"Cardenas"])
-        print("la Url es: \(String(describing: request?.url))")
-        print("Body: \(String(describing: request?.httpBody))")*/
-        NetworkService.shared.myFirstRequest { (result) in
-            switch result{
-            case .success(let data):
-                for dish in data {
-                    print(dish.name ?? "")
-                }
-            case .failure(let error):
-                print("El error es: \(error.localizedDescription)")
-            }
-        }
-        
-        
+        title = "Yummie"
+    
         specialsCollectionView.dataSource = self
+        specialsCollectionView.delegate = self
         
         registerCells()
-        title = "Yummie"
+        
+        let hud = JGProgressHUD(style: .dark)
+        hud.textLabel.text = "Cargando"
+        hud.show(in: self.view)
+        
+        NetworkService.shared.fetchAllCategories { [weak self] result in
+            switch result {
+            case .success(let allDishes):
+                //print("Todo bien homeViewController")
+                hud.dismiss()
+                
+                self?.categories = allDishes.categoris ?? []
+                self?.populars = allDishes.populars ?? []
+                self?.specials = allDishes.specials ?? []
+                
+                self?.categoryCollectionView.reloadData()
+                self?.popularCollectionView.reloadData()
+                self?.specialsCollectionView.reloadData()
+                
+            case .failure(let error):
+                print("el error es: \(error.localizedDescription) ")
+                
+                let hud = JGProgressHUD(style: .dark)
+                hud.indicatorView = JGProgressHUDErrorIndicatorView() // Usa un ícono de error
+                hud.textLabel.text = "Error"
+                hud.show(in: self!.view)
+                hud.dismiss(afterDelay: 2.0)
+
+            }
+        }
      }
     
     private func registerCells(){

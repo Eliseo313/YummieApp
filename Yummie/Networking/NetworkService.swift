@@ -12,8 +12,15 @@ struct NetworkService{
     
     private init (){}
     
-    func myFirstRequest(completion: @escaping(Result<[Dish], Error>) -> Void ){
-        request(route: .temp, method: .get, completion: completion)
+    func fetchAllCategories(completion: @escaping(Result<AllDishes,Error>) -> Void){
+        request(route: .fetchAllCategories, method: .get, completion: completion)
+    }
+    
+    func placeOrder(dishId:String, name: String, completion:@escaping(Result<Order,Error>) -> Void){
+         
+        let params = ["name": name]
+        
+        request(route: .placeOrder(dishId), method: .post,parameters: params ,completion: completion)
     }
     
     private func request<T: Decodable>(
@@ -33,7 +40,7 @@ struct NetworkService{
                 var result: Result<Data,Error>?
                 if let data = data {
                     result = .success(data)
-                    let responseString = String(data: data, encoding: .utf8) ?? "no se pudo hacer stringify a data"
+                    //let responseString = String(data: data, encoding: .utf8) ?? "no se pudo hacer stringify a data"
                     
                     //print("Response: \(responseString)")
                 }else if let error = error{
