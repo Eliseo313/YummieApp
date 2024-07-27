@@ -50,6 +50,8 @@ class OnboardingViewController: UIViewController {
             controller.modalPresentationStyle = .fullScreen
             controller.modalTransitionStyle = .flipHorizontal
             
+            UserDefaults.standard.hasOnboarded = true
+            
             present(controller, animated: true, completion: nil)
             
             

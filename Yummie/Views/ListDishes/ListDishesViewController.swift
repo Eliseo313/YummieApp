@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import JGProgressHUD
 
 class ListDishesViewController: UIViewController {
 
@@ -13,16 +14,32 @@ class ListDishesViewController: UIViewController {
     
     var category: DishCategory!
     
-    var dishes: [Dish] = [
-        .init(id: "id1", name: "Morisqueta", description: "La más pedida!", image: "https://picsum.photos/100/200", calories: 700),
-        .init(id: "id2", name: "Pechuga asada", description: "Delicioso!", image: "https://picsum.photos/100/200", calories: 300),
-        .init(id: "id3", name: "Mole", description: "Especialidad de la casa", image: "https://picsum.photos/100/200", calories: 500)
-    ]
+    var dishes: [Dish] = []
     override func viewDidLoad() {
         super.viewDidLoad()
         
         title = category.name
         registerCells()
+        
+        let hud = JGProgressHUD(style: .dark)
+        hud.textLabel.text = "Cargando"
+        hud.show(in: self.view)
+        
+        NetworkService.shared.fetchCategoryDishes(categoryId: category.id ?? "") { [weak self] (result) in
+            switch result {
+                
+            case .success(let dishes):
+                hud.dismiss()
+                self?.dishes = dishes
+                self?.tableView.reloadData()
+            case .failure(let error ):
+                hud.indicatorView = JGProgressHUDErrorIndicatorView() // Usa un ícono de error
+                hud.textLabel.text = "Error al ordenar: \(error.localizedDescription)"
+                hud.show(in: self!.view!)
+                hud.dismiss(afterDelay: 2.0)
+            }
+        }
+        
     }
     
     private func registerCells(){
@@ -41,6 +58,12 @@ extension ListDishesViewController: UITableViewDelegate, UITableViewDataSource{
         let cell = tableView.dequeueReusableCell(withIdentifier: DishListTableViewCell.identifier, for: indexPath) as! DishListTableViewCell
         cell.setup(dish: dishes[indexPath.row])
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let controller = DishDetailViewController.instantiate()
+        controller.dish = dishes[indexPath.row]
+        navigationController?.pushViewController(controller, animated: true)
     }
     
     

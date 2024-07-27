@@ -37,10 +37,10 @@ class HomeViewController: UIViewController {
         NetworkService.shared.fetchAllCategories { [weak self] result in
             switch result {
             case .success(let allDishes):
-                //print("Todo bien homeViewController")
+               
                 hud.dismiss()
                 
-                self?.categories = allDishes.categoris ?? []
+                self?.categories = allDishes.categories ?? []
                 self?.populars = allDishes.populars ?? []
                 self?.specials = allDishes.specials ?? []
                 

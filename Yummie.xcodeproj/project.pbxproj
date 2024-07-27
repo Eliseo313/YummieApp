@@ -27,6 +27,7 @@
 		107B69132C32601B00CC7590 /* OnboardingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107B69122C32601B00CC7590 /* OnboardingCollectionViewCell.swift */; };
 		10898FDA2C51466400675960 /* JGProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = 10898FD92C51466400675960 /* JGProgressHUD */; };
 		109EAE1C2C3ED2AE00D9838C /* Dish.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109EAE1B2C3ED2AE00D9838C /* Dish.swift */; };
+		10A212C92C5490AB00D99A65 /* UserDefaults+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A212C82C5490AB00D99A65 /* UserDefaults+Extension.swift */; };
 		10A8B78A2C38FFC0004DEE84 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A8B7892C38FFC0004DEE84 /* HomeViewController.swift */; };
 		10AC911F2C5299E100994502 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 10AC911E2C5299E100994502 /* IQKeyboardManagerSwift */; };
 		10AD74362C3D80830051047D /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10AD74352C3D80830051047D /* CardView.swift */; };
@@ -67,6 +68,7 @@
 		106F71102C4AAEBA00CA256C /* ApiResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiResponse.swift; sourceTree = "<group>"; };
 		107B69122C32601B00CC7590 /* OnboardingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCollectionViewCell.swift; sourceTree = "<group>"; };
 		109EAE1B2C3ED2AE00D9838C /* Dish.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dish.swift; sourceTree = "<group>"; };
+		10A212C82C5490AB00D99A65 /* UserDefaults+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Extension.swift"; sourceTree = "<group>"; };
 		10A8B7892C38FFC0004DEE84 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		10AD74352C3D80830051047D /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		10AD74382C3D85460051047D /* DishPortraitCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishPortraitCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -192,6 +194,7 @@
 				102907E82C3120C5001B1BBC /* UIView+Extension.swift */,
 				10B3EA382C3B6C5500A10438 /* String+Extension.swift */,
 				1002DA862C44C6990075AC5C /* UIViewController+Extension.swift */,
+				10A212C82C5490AB00D99A65 /* UserDefaults+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -408,6 +411,7 @@
 				106F710F2C4A25E000CA256C /* AppError.swift in Sources */,
 				107B69132C32601B00CC7590 /* OnboardingCollectionViewCell.swift in Sources */,
 				109EAE1C2C3ED2AE00D9838C /* Dish.swift in Sources */,
+				10A212C92C5490AB00D99A65 /* UserDefaults+Extension.swift in Sources */,
 				10AD743B2C3D85460051047D /* DishPortraitCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

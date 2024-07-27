@@ -55,6 +55,8 @@ class DishDetailViewController: UIViewController {
                 hud.indicatorView = JGProgressHUDSuccessIndicatorView()
                 hud.textLabel.text = "Orden creada 👨🏽‍🍳"
                 hud.dismiss(afterDelay: 1.2, animated: true)
+                self.navigationController?.popViewController(animated: true)
+
             case .failure(let error):
                 let hud = JGProgressHUD(style: .dark)
                 hud.indicatorView = JGProgressHUDErrorIndicatorView() // Usa un ícono de error

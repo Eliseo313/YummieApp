@@ -6,16 +6,15 @@
 //
 
 import UIKit
+import JGProgressHUD
 
 class ListOrdersViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
-    var orders: [Order] = [
-        .init(id: "id1", name: "Eliseo Cardenas", dish: .init(id: "id1", name: "Morisqueta", description: "La más pedida!", image: "https://picsum.photos/100/200", calories: 700)),
-        .init(id: "id1", name: "Lazaro Cardenas", dish: .init(id: "id1", name: "Morisqueta", description: "La más pedida!", image: "https://picsum.photos/100/200", calories: 700)),
-        .init(id: "id1", name: "Pako Cardenas", dish: .init(id: "id1", name: "Morisqueta", description: "La más pedida!", image: "https://picsum.photos/100/200", calories: 700))
-    ]
+    var orders: [Order] = []
+    
+    let hud = JGProgressHUD(style: .dark)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,8 +22,30 @@ class ListOrdersViewController: UIViewController {
         title = "Ordenes"
         registerCells()
         
+        
+        hud.textLabel.text = "Cargando"
+        hud.show(in: self.view)
+        
     }
 
+    override func viewDidAppear(_ animated: Bool ) {
+        
+        NetworkService.shared.fetchOrders { [weak self] (result) in
+             
+            switch result{
+            case .success(let orders):
+                self?.hud.dismiss()
+                self?.orders = orders
+                self?.tableView.reloadData()
+            case .failure(let error ):
+                self?.hud.indicatorView = JGProgressHUDErrorIndicatorView() // Usa un ícono de error
+                self?.hud.textLabel.text = "Error: \(error.localizedDescription)"
+                self?.hud.show(in: self!.view)
+                self?.hud.dismiss(afterDelay: 2.0)
+            }
+        }
+    }
+    
     private func registerCells(){
         tableView.register(UINib(nibName: DishListTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: DishListTableViewCell.identifier)
     }

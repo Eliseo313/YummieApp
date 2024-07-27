@@ -11,7 +11,7 @@ struct DishCategory: Decodable {
     let id,name,image: String?
     
     enum CodingKeys: String,CodingKey {
-        case id = "_id"
+        case id
         case name = "title"
         case image
     }
