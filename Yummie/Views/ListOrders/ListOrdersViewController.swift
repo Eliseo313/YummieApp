@@ -66,7 +66,7 @@ extension ListOrdersViewController: UITableViewDataSource, UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let controller = DishDetailViewController.instantiate()
-        controller.dish = orders[indexPath.row].dish 
+        controller.dish = orders[indexPath.row].platillo
         navigationController?.pushViewController(controller, animated: true)
     }
 }

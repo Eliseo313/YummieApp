@@ -18,6 +18,8 @@ class DishDetailViewController: UIViewController {
     
     var dish : Dish!
     
+    let urlImagenes = "http://192.168.100.65:8888/Yummie/imagenes/platillos/"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
  
@@ -25,9 +27,10 @@ class DishDetailViewController: UIViewController {
     }
 
     private func populateView(){
-        dishImageView.kf.setImage(with: dish.image?.asUrl)
-        titleLbl.text = dish.name
-        descriptionLbl.text = dish.description
+        let urlImagen = urlImagenes+(dish.vImagen ?? "")
+        dishImageView.kf.setImage(with: urlImagen.asUrl)
+        titleLbl.text = dish.vNombre
+        descriptionLbl.text = dish.vDescripcion
         caloriesLbl.text = dish.formattedCalories
         
     }
@@ -44,12 +47,12 @@ class DishDetailViewController: UIViewController {
             
             return
         }
-        //print("Hola,\(name)")
+        print("Hola,\(name)")
         let hud = JGProgressHUD(style: .dark)
         //hud.textLabel.text = "prueba..."
         hud.show(in: self.view)
         
-        NetworkService.shared.placeOrder(dishId: dish.id ?? "", name: name) { (result) in
+        NetworkService.shared.placeOrder(dishId: dish.idPlatillo ?? 0 , name: name) { (result) in
             switch result{
             case .success(_):
                 hud.indicatorView = JGProgressHUDSuccessIndicatorView()
@@ -58,11 +61,12 @@ class DishDetailViewController: UIViewController {
                 self.navigationController?.popViewController(animated: true)
 
             case .failure(let error):
-                let hud = JGProgressHUD(style: .dark)
-                hud.indicatorView = JGProgressHUDErrorIndicatorView() // Usa un ícono de error
-                hud.textLabel.text = "Error al ordenar: \(error.localizedDescription)"
-                hud.show(in: self.view)
-                hud.dismiss(afterDelay: 2.0)
+                let hud2 = JGProgressHUD(style: .dark)
+                hud2.indicatorView = JGProgressHUDErrorIndicatorView() // Usa un ícono de error
+                hud2.textLabel.text = "Error al ordenar: \(error.localizedDescription)"
+                hud2.show(in: self.view)
+                hud2.dismiss(afterDelay: 2.0)
+                hud.dismiss()
             }
         }
     }

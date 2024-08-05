@@ -34,15 +34,15 @@ class HomeViewController: UIViewController {
         hud.textLabel.text = "Cargando"
         hud.show(in: self.view)
         
-        NetworkService.shared.fetchAllCategories { [weak self] result in
+        NetworkService.shared.fetchAll { [weak self] result in
             switch result {
             case .success(let allDishes):
                
                 hud.dismiss()
                 
-                self?.categories = allDishes.categories ?? []
-                self?.populars = allDishes.populars ?? []
-                self?.specials = allDishes.specials ?? []
+                self?.categories = allDishes.categorias ?? []
+                self?.populars = allDishes.populares ?? []
+                self?.specials = allDishes.especiales ?? []
                 
                 self?.categoryCollectionView.reloadData()
                 self?.popularCollectionView.reloadData()
@@ -51,11 +51,12 @@ class HomeViewController: UIViewController {
             case .failure(let error):
                 print("el error es: \(error.localizedDescription) ")
                 
-                let hud = JGProgressHUD(style: .dark)
-                hud.indicatorView = JGProgressHUDErrorIndicatorView() // Usa un ícono de error
-                hud.textLabel.text = "Error"
-                hud.show(in: self!.view)
-                hud.dismiss(afterDelay: 2.0)
+                let hud2 = JGProgressHUD(style: .dark)
+                hud2.indicatorView = JGProgressHUDErrorIndicatorView() // Usa un ícono de error
+                hud2.textLabel.text = "Error"
+                hud2.show(in: self!.view)
+                hud2.dismiss(afterDelay: 2.0)
+                hud.dismiss()
 
             }
         }

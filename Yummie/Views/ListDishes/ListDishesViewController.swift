@@ -18,14 +18,14 @@ class ListDishesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        title = category.name
+        title = category.vNombre
         registerCells()
         
         let hud = JGProgressHUD(style: .dark)
         hud.textLabel.text = "Cargando"
         hud.show(in: self.view)
         
-        NetworkService.shared.fetchCategoryDishes(categoryId: category.id ?? "") { [weak self] (result) in
+        NetworkService.shared.fetchCategoryDishes(categoryId: category.idCategoria ?? 0) { [weak self] (result) in
             switch result {
                 
             case .success(let dishes):

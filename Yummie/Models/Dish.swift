@@ -8,10 +8,11 @@
 import Foundation
 
 struct Dish: Decodable{
-    let id,name, description,image: String?
-    let calories: Int?
+    let vNombre,vDescripcion,vImagen,vCalorias: String?
+    let idPlatillo,idCategoria: Int?
+    let bIsPopular,bIsEspecial: Int?
     
     var formattedCalories: String {
-        return "\(calories ?? 0) calorias"
+        return "\(vCalorias ?? " ") calorias"
     }
 }

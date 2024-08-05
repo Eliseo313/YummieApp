@@ -17,7 +17,7 @@ enum AppError: LocalizedError{
         switch self {
             
         case .errorDecoding:
-            return "La repuesta(Response) no se pudo decodear"
+            return "El  Response no se pudo decodear"
         case .unknownError:
             return "Bruhhh!! no tengo idea que paso"
         case .invalidUrl:

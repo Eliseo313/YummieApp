@@ -16,20 +16,25 @@ struct NetworkService{
         request(route: .fetchAllCategories, method: .get, completion: completion)
     }
     
-    func placeOrder(dishId:String, name: String, completion:@escaping(Result<Order,Error>) -> Void){
+    func fetchAll(completion: @escaping(Result<AllDishes,Error>) -> Void){
+        request(route: .fetchAll, method: .get, completion: completion)
+    }
+    
+    func placeOrder(dishId: Int, name: String, completion:@escaping(Result<Order,Error>) -> Void){
          
         let params = ["name": name]
         
         request(route: .placeOrder(dishId), method: .post,parameters: params ,completion: completion)
     }
     
-    func fetchCategoryDishes(categoryId: String, completion: @escaping(Result<[Dish], Error>) -> Void) {
+    func fetchCategoryDishes(categoryId: Int, completion: @escaping(Result<[Dish], Error>) -> Void) {
             request(route: .fetchCategoryDishes(categoryId), method: .get, completion: completion)
         }
     
     func fetchOrders(completion:@escaping(Result<[Order],Error>)->Void){
         request(route: .fetchOrders, method: .get, completion: completion)
     }
+    
     private func request<T: Decodable>(
         route: Route,
         method: Method,
@@ -47,9 +52,16 @@ struct NetworkService{
                 var result: Result<Data,Error>?
                 if let data = data {
                     result = .success(data)
-                    //let responseString = String(data: data, encoding: .utf8) ?? "no se pudo hacer stringify a data"
                     
-                    //print("Response: \(responseString)")
+//                    let responseString = String(data: data, encoding: .utf8) ?? "no se pudo hacer stringify a data"
+                    if let jsonObject = try? JSONSerialization.jsonObject(with: data, options: []),
+                       let jsonData = try? JSONSerialization.data(withJSONObject: jsonObject, options: .prettyPrinted),
+                       let jsonString = String(data: jsonData, encoding: .utf8) {
+                        print("Response JSON:\n\(jsonString)")
+                    } else {
+                        print("Error al formatear la respuesta JSON")
+                    }
+//                    print("Response JSON: \n\(responseString)")
                 }else if let error = error{
                     result = .failure(error)
                     print("el error es:\n \(error.localizedDescription)")
@@ -61,7 +73,7 @@ struct NetworkService{
             }.resume()
     }
     
-    private func handleResponse<T: Decodable>(result: Result<Data,Error>?,
+    private func handleResponseDeprecated<T: Decodable>(result: Result<Data,Error>?,
                                               completion: (Result<T,Error>)->Void){
         
         guard let result = result else {
@@ -92,6 +104,33 @@ struct NetworkService{
         }
     }
     
+    private func handleResponse<T: Decodable>(result: Result<Data, Error>?, completion: @escaping (Result<T, Error>) -> Void) {
+        guard let result = result else {
+            completion(.failure(AppError.unknownError))
+            return
+        }
+
+        switch result {
+        case .success(let data):
+            let decoder = JSONDecoder()
+            do {
+                let response = try decoder.decode(ApiResponse<T>.self, from: data)
+                if let error = response.error {
+                    completion(.failure(AppError.serverError(error)))
+                } else if let decodedData = response.data {
+                    completion(.success(decodedData))
+                } else {
+                    completion(.failure(AppError.unknownError))
+                }
+            } catch {
+                completion(.failure(AppError.errorDecoding))
+            }
+
+        case .failure(let error):
+            completion(.failure(error))
+        }
+    }
+
     /// Función que ayuda a generar una urlRequest
     /// - Parameters:
     ///   - route: ruta a los recursos en el backend

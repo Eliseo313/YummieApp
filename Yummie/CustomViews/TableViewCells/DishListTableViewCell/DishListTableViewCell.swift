@@ -10,6 +10,7 @@ import UIKit
 class DishListTableViewCell: UITableViewCell {
 
     static let identifier = "DishListTableViewCell"
+    let urlImagenes = "http://192.168.100.65:8888/Yummie/imagenes/platillos/"
     
     @IBOutlet weak var dishImageView: UIImageView!
     @IBOutlet weak var descriptionLbl: UILabel!
@@ -17,14 +18,18 @@ class DishListTableViewCell: UITableViewCell {
     
     func setup(dish: Dish){
         
-        dishImageView.kf.setImage(with: dish.image?.asUrl)
-        titleLbl.text = dish.name
-        descriptionLbl.text = dish.description
+        let urlImagen = urlImagenes+(dish.vImagen ?? "")
+        dishImageView.kf.setImage(with: urlImagen.asUrl)
+        titleLbl.text = dish.vNombre
+        descriptionLbl.text = dish.vDescripcion
     }
     
     func setup(order: Order){
-        dishImageView.kf.setImage(with: order.dish?.image?.asUrl)
-        titleLbl.text =  order.dish?.name
-        descriptionLbl.text = order.name
+        
+        let urlImagen = urlImagenes+(order.platillo?.vImagen ?? "")
+        
+        dishImageView.kf.setImage(with: urlImagen.asUrl)
+        titleLbl.text =  order.platillo?.vNombre
+        descriptionLbl.text = order.vNombre
     }
 }

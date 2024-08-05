@@ -10,6 +10,8 @@ import UIKit
 class DishPortraitCollectionViewCell: UICollectionViewCell {
 
     static let identifier = "DishPortraitCollectionViewCell"
+    let urlImagenes = "http://192.168.100.65:8888/Yummie/imagenes/platillos/"
+    
     
     @IBOutlet weak var titleLbl: UILabel!
     @IBOutlet weak var dishImageView: UIImageView!
@@ -17,10 +19,13 @@ class DishPortraitCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var descriptionLbl: UILabel!
     
     func setup(dish: Dish){
-        titleLbl.text = dish.name
-        dishImageView.kf.setImage(with: dish.image?.asUrl)
+        
+        let urlImagen = urlImagenes+(dish.vImagen ?? "")
+        
+        titleLbl.text = dish.vNombre
+        dishImageView.kf.setImage(with: urlImagen.asUrl)
         caloriesLbl.text = dish.formattedCalories
-        descriptionLbl.text = dish.description
+        descriptionLbl.text = dish.vDescripcion
     }
     
     
